@@ -168,8 +168,8 @@ Final Notes:
 
 **Mehrab Fajar**  
 
-- 🌐 Portfolio: https://mehrabfajar.github.io  
-- 💻 GitHub Repository: https://github.com/mehrabfajar/SyncOra/
+- 🌐 Portfolio: [GitHub](https://mehrabfajar.github.io/)
+- 💻 GitHub Repository: [Project](https://github.com/mehrabfajar/SyncOra/)
 
 
 ## License
