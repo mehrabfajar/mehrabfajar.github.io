@@ -147,7 +147,7 @@ nav {
   align-items: center;
   justify-content: center;
   width: 32px; height: 32px;
-  color: var(--text-3);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
   font-size: 0;
@@ -157,7 +157,7 @@ nav {
   fill: currentColor;
   transition: fill 0.2s;
 }
-.social-rail a:hover { color: var(--accent); transform: translateX(3px); }
+.social-rail a:hover { color: var(); background-color:  #fff; transform: translateX(3px); }
 
 /* ── LAYOUT ── */
 main {
