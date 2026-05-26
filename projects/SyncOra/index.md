@@ -21,16 +21,16 @@ No accounts. No emails required. Just a link.
 
 ## Screenshots
 
-![Home](screenshots/home.png)
+![Home](home.png)
 <br>
 <p align="center">
-  <img src="screenshots/create_event.png" width="49.5%" />
-  <img src="screenshots/event.png" width="49.5%" />
+  <img src="create_event.png" width="49.5%" />
+  <img src="event.png" width="49.5%" />
 </p>
 <br>
 <p align="center">
-  <img src="screenshots/vote.png" width="49.5%" />
-  <img src="screenshots/results.png" width="49.5%" />
+  <img src="vote.png" width="49.5%" />
+  <img src="results.png" width="49.5%" />
 </p>
 
 ---
