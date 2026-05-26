@@ -1,12 +1,8 @@
 # UrbanPulse: Your Event & Logistics Planner
 ## SDE Final Project Report 2025/26
 
-<p align="center"> <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Flask-API-black?logo=flask&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql&logoColor=white" /> <img src="https://img.shields.io/badge/Docker-Containerization-blue?logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/Docker%20Compose-Orchestration-blue?logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/REST-Architecture-green" /> <img src="https://img.shields.io/badge/SOA-4--Layer-orange" /> <img src="https://img.shields.io/badge/Telegram-Bot-blue?logo=telegram&logoColor=white" /> </p>
-<p align="center">
-  <img src="https://img.shields.io/badge/Ticketmaster-Events-purple" />
-  <img src="https://img.shields.io/badge/OpenWeatherMap-Weather-orange" />
-  <img src="https://img.shields.io/badge/OpenRouteService-Mapping-green" />
-</p>
+<img src="https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Flask-API-black?logo=flask&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql&logoColor=white" /> <img src="https://img.shields.io/badge/Docker-Containerization-blue?logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/Docker%20Compose-Orchestration-blue?logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/REST-Architecture-green" /> <img src="https://img.shields.io/badge/SOA-4--Layer-orange" /> <img src="https://img.shields.io/badge/Telegram-Bot-blue?logo=telegram&logoColor=white" />  <img src="https://img.shields.io/badge/Ticketmaster-Events-purple" /> <img src="https://img.shields.io/badge/OpenWeatherMap-Weather-orange" />  <img src="https://img.shields.io/badge/OpenRouteService-Mapping-green" />
+
 
 
 **Team Members:** Lewis Ndambiri, Mehrab Fajar  
