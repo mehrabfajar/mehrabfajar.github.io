@@ -6,7 +6,6 @@
   <title>Mehrab Fajar — AI & Data Science</title>
   <meta name="description" content="Building intelligent solutions at the intersection of innovation, operations, and technology." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>⬡</text></svg>" />
 </head>
 <body>
 
@@ -15,9 +14,29 @@
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
 
+  <!-- SIDE SOCIAL RAIL -->
+  <div class="social-rail">
+    <!-- LinkedIn -->
+    <a href="https://linkedin.com/in/mehrabfajar" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <!-- GitHub -->
+    <a href="https://github.com/mehrabfajar" target="_blank" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <!-- Email -->
+    <a href="mailto:mehrab@example.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.401.148-.574.396-.819L12 13.09 23.604 4.638c.248.245.396.418.396.819z"/></svg>
+    </a>
+    <!-- Twitter/X -->
+    <a href="https://twitter.com/mehrabfajar" target="_blank" aria-label="Twitter">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.213 5.567zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+  </div>
+
   <!-- NAV -->
   <nav>
-    <a href="/" class="nav-logo">mehrabfajar</a>
+    <a href="/" class="nav-logo">mf.io</a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#philosophy">Process</a></li>
@@ -31,20 +50,22 @@
     <!-- ── HERO ── -->
     <section id="hero">
       <div class="hero-layout">
+
         <div class="hero-left">
           <p class="hero-eyebrow">// init portfolio.js</p>
           <h1 class="hero-name">Mehrab<br/><span>Fajar</span></h1>
-          <p class="hero-title">
-            <span class="hl">AI &amp; Data Science Engineer</span>
-            <span style="color:var(--text-3)"> · </span>
-            Intelligent Systems Builder
-          </p>
+
+          <div class="hero-typing-wrap">
+            <span class="typed-label" id="typed-text"></span><span class="hero-cursor"></span>
+          </div>
+
           <p class="hero-bio">
             Experienced in building intelligent solutions, managing technical projects, and applying
             data-driven approaches to improve operational efficiency and decision-making.
             Passionate about developing innovative technologies that solve real-world challenges
             and create meaningful impact.
           </p>
+
           <div class="tags">
             <span class="tag">Machine Learning</span>
             <span class="tag">LLM Research</span>
@@ -55,13 +76,59 @@
             <span class="tag">PyTorch</span>
             <span class="tag">SQL</span>
           </div>
+
           <div class="cta-row">
             <a href="resume.pdf" class="btn btn-primary" target="_blank">↓ Resume</a>
             <a href="https://linkedin.com/in/mehrabfajar" class="btn btn-ghost" target="_blank">LinkedIn</a>
             <a href="https://github.com/mehrabfajar" class="btn btn-ghost" target="_blank">GitHub</a>
             <a href="mailto:mehrab@example.com" class="btn btn-ghost">Email</a>
           </div>
+
           <p class="status-dot">Open to opportunities — AI/ML &amp; Data roles</p>
+        </div>
+
+        <!-- AVATAR RIGHT -->
+        <div class="hero-photo-wrap">
+          <div class="hero-avatar">
+            <!--
+              TO USE YOUR OWN PHOTO: replace this entire <svg> block with:
+              <img src="assets/your-photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Mehrab Fajar" />
+            -->
+            <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="skinG" cx="50%" cy="40%" r="50%">
+                  <stop offset="0%" stop-color="#f5c6a0"/>
+                  <stop offset="100%" stop-color="#e0956a"/>
+                </radialGradient>
+                <radialGradient id="bgG" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(199,21,133,0.18)"/>
+                  <stop offset="100%" stop-color="rgba(80,0,50,0.35)"/>
+                </radialGradient>
+              </defs>
+              <!-- head -->
+              <circle cx="50" cy="38" r="22" fill="url(#skinG)"/>
+              <!-- hair -->
+              <ellipse cx="50" cy="20" rx="21" ry="13" fill="#1a0a0a"/>
+              <ellipse cx="50" cy="17" rx="18" ry="9" fill="#2a0f0f"/>
+              <!-- eyes -->
+              <ellipse cx="42" cy="37" rx="3.5" ry="4" fill="#1a1a2e"/>
+              <ellipse cx="58" cy="37" rx="3.5" ry="4" fill="#1a1a2e"/>
+              <circle cx="43" cy="36" r="1.2" fill="#fff"/>
+              <circle cx="59" cy="36" r="1.2" fill="#fff"/>
+              <!-- subtle smile -->
+              <path d="M44 45 Q50 50 56 45" stroke="#c0775a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <!-- neck -->
+              <rect x="45" y="58" width="10" height="9" rx="2" fill="url(#skinG)"/>
+              <!-- shoulders / body -->
+              <path d="M18 95 Q18 72 30 68 Q40 64 50 65 Q60 64 70 68 Q82 72 82 95 Z" fill="#1e1e2e"/>
+              <!-- shirt collar -->
+              <path d="M44 65 L50 75 L56 65" stroke="#c71585" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <p class="hero-avatar-note">
+            Replace with your photo<br/>
+            <span>assets/photo.jpg</span>
+          </p>
         </div>
 
       </div>
@@ -89,7 +156,7 @@
           <span class="ticker-item">Spark</span>
           <span class="ticker-item">LangChain</span>
           <span class="ticker-item">OpenCV</span>
-          <span class="ticker-item">Numpy</span>
+          <span class="ticker-item">NumPy</span>
           <span class="ticker-item">Git</span>
           <span class="ticker-item">Python</span>
           <span class="ticker-item">PyTorch</span>
@@ -103,7 +170,7 @@
           <span class="ticker-item">Spark</span>
           <span class="ticker-item">LangChain</span>
           <span class="ticker-item">OpenCV</span>
-          <span class="ticker-item">Numpy</span>
+          <span class="ticker-item">NumPy</span>
           <span class="ticker-item">Git</span>
         </div>
       </div>
@@ -122,7 +189,7 @@
           </div>
           <div class="project-actions">
             <a href="projects/hackaprompt-ai.html" class="btn btn-ghost">Case Study →</a>
-            <a href="https://github.com/mehrabfajar/hackaprompt-ai" class="btn btn-ghost" target="_blank">GitHub</a>
+            <a href="https://github.com/mehrabfajar" class="btn btn-ghost" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -139,7 +206,7 @@
           </div>
           <div class="project-actions">
             <a href="projects/predictive-production-planning.html" class="btn btn-ghost">Case Study →</a>
-            <a href="https://github.com/mehrabfajar/predictive-production" class="btn btn-ghost" target="_blank">GitHub</a>
+            <a href="https://github.com/mehrabfajar" class="btn btn-ghost" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -147,7 +214,7 @@
           <img class="project-img" src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=640&q=60" alt="UrbanPulse" />
           <p class="project-num">03 — Geospatial AI</p>
           <h3 class="project-name">UrbanPulse</h3>
-          <p class="project-desc">City-scale urban analytics platform fusing mobility, noise, and footfall sensors to surface real-time livability signals for smart city planning.</p>
+          <p class="project-desc">City-scale analytics platform fusing mobility, noise, and footfall sensors to surface real-time livability signals for smart city planning.</p>
           <div class="project-tech">
             <span class="tech-pill">GeoPandas</span>
             <span class="tech-pill">Clustering</span>
@@ -156,7 +223,7 @@
           </div>
           <div class="project-actions">
             <a href="projects/urbanpulse.html" class="btn btn-ghost">Case Study →</a>
-            <a href="https://github.com/mehrabfajar/urbanpulse" class="btn btn-ghost" target="_blank">GitHub</a>
+            <a href="https://github.com/mehrabfajar" class="btn btn-ghost" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -173,7 +240,7 @@
           </div>
           <div class="project-actions">
             <a href="projects/flower-identification.html" class="btn btn-ghost">Case Study →</a>
-            <a href="https://github.com/mehrabfajar/flower-identification" class="btn btn-ghost" target="_blank">GitHub</a>
+            <a href="https://github.com/mehrabfajar" class="btn btn-ghost" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -190,7 +257,7 @@
           </div>
           <div class="project-actions">
             <a href="projects/hpc-romberg.html" class="btn btn-ghost">Case Study →</a>
-            <a href="https://github.com/mehrabfajar/hpc-romberg" class="btn btn-ghost" target="_blank">GitHub</a>
+            <a href="https://github.com/mehrabfajar" class="btn btn-ghost" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -199,57 +266,71 @@
 
   </main>
 
-  <!-- ── HOW I WORK / PROCESS ── -->
+  <!-- ── PROCESS ── -->
   <section id="philosophy">
     <div class="philosophy-inner">
       <p class="section-label reveal">Approach</p>
       <h2 class="section-heading reveal">Building Intelligent Systems</h2>
       <p class="section-sub reveal">
-        Four principles that shape how I approach every project —
-        from early-stage exploration to production-ready deployment.
+        Four principles that guide how I approach every challenge —
+        from early exploration to production-ready impact.
       </p>
 
-      <div class="process-timeline">
+      <div class="process-timeline" id="process-timeline">
+        <!-- line height set by JS -->
+        <div class="process-line" id="process-line"></div>
 
         <div class="process-step reveal">
-          <div class="process-num">01</div>
-          <div class="process-body">
-            <h3>Understand the problem before the data</h3>
-            <p>Every meaningful system starts with clarity about the real-world outcome it needs to drive.
-            I invest time upfront in stakeholder context, operational constraints, and success criteria —
-            so that technical choices serve actual goals, not just benchmarks.</p>
+          <div class="process-node"><div class="process-node-inner"></div></div>
+          <div class="process-connector">
+            <div class="process-num-badge">Step 01</div>
+            <div class="process-card">
+              <h3>Understand the problem before the solution</h3>
+              <p>Every meaningful system starts with clarity about the real-world outcome it needs to drive.
+              I invest time upfront in stakeholder context, operational constraints, and success criteria —
+              so that every technical decision serves actual goals, not just metrics.</p>
+            </div>
           </div>
         </div>
 
         <div class="process-step reveal">
-          <div class="process-num">02</div>
-          <div class="process-body">
-            <h3>Move fast with simple, working foundations</h3>
-            <p>A functional baseline outperforms a stalled ambitious system every time.
-            I establish simple, measurable solutions early — creating a foundation to iterate from
-            rather than a target to eventually reach. Complexity is earned, not assumed.</p>
+          <div class="process-node"><div class="process-node-inner"></div></div>
+          <div class="process-connector">
+            <div class="process-num-badge">Step 02</div>
+            <div class="process-card">
+              <h3>Move fast with simple, working foundations</h3>
+              <p>A functional baseline always outperforms a stalled ambitious system.
+              I establish simple, measurable solutions early — a foundation to iterate from
+              rather than a target to eventually reach. Complexity is earned, not assumed.</p>
+            </div>
           </div>
         </div>
 
         <div class="process-step reveal">
-          <div class="process-num">03</div>
-          <div class="process-body">
-            <h3>Measure what actually matters</h3>
-            <p>Rigorous evaluation is as important as the solution itself.
-            I build evaluation frameworks that capture real-world performance — not just
-            accuracy on a holdout set. If you can't measure the right thing, you can't
-            improve the right thing.</p>
+          <div class="process-node"><div class="process-node-inner"></div></div>
+          <div class="process-connector">
+            <div class="process-num-badge">Step 03</div>
+            <div class="process-card">
+              <h3>Measure what actually matters</h3>
+              <p>Rigorous evaluation is as important as the solution itself.
+              I build evaluation frameworks that reflect real-world performance —
+              not just accuracy on a holdout set. If you can't measure the right thing,
+              you can't improve the right thing.</p>
+            </div>
           </div>
         </div>
 
         <div class="process-step reveal">
-          <div class="process-num">04</div>
-          <div class="process-body">
-            <h3>Make decisions transparent and actionable</h3>
-            <p>Technology creates value only when people understand and trust it.
-            I design systems where outputs are explainable, decisions are traceable,
-            and every stakeholder — technical or not — can engage with confidence.
-            Transparency is not a feature; it is the foundation of impact.</p>
+          <div class="process-node"><div class="process-node-inner"></div></div>
+          <div class="process-connector">
+            <div class="process-num-badge">Step 04</div>
+            <div class="process-card">
+              <h3>Make decisions transparent and actionable</h3>
+              <p>Technology creates value only when people understand and trust it.
+              I design systems where outputs are explainable, decisions are traceable,
+              and every stakeholder can engage with confidence.
+              Transparency is not a feature — it is the foundation of lasting impact.</p>
+            </div>
           </div>
         </div>
 
@@ -268,35 +349,51 @@
       <div class="edu-grid">
 
         <div class="edu-card reveal">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+          </div>
           <p class="edu-degree">BSc Computer Science &amp; Artificial Intelligence</p>
           <p class="edu-school">University Name · City, Country</p>
           <p class="edu-year">20XX – 20XX</p>
-          <p class="edu-desc">
-            Focused on machine learning, algorithms, and software engineering.
-            Final year project: deep learning-based classification system deployed
-            in a production environment.
-          </p>
+          <p class="edu-desc">Core focus on machine learning, algorithms, and software systems. Final year project: a deep learning classification system deployed to a production environment.</p>
+          <div class="edu-tags">
+            <span class="edu-tag">ML</span>
+            <span class="edu-tag">Algorithms</span>
+            <span class="edu-tag">Software Eng</span>
+            <span class="edu-tag">Deep Learning</span>
+          </div>
         </div>
 
         <div class="edu-card reveal">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
           <p class="edu-degree">MSc Data Science &amp; Intelligent Systems</p>
           <p class="edu-school">University Name · City, Country</p>
           <p class="edu-year">20XX – 20XX</p>
-          <p class="edu-desc">
-            Advanced study in statistical learning, NLP, and high-performance computing.
-            Research thesis exploring adversarial robustness in large language models.
-          </p>
+          <p class="edu-desc">Advanced study in statistical learning, NLP, and high-performance computing. Research thesis on adversarial robustness in large language models.</p>
+          <div class="edu-tags">
+            <span class="edu-tag">NLP</span>
+            <span class="edu-tag">HPC</span>
+            <span class="edu-tag">Statistical ML</span>
+            <span class="edu-tag">Research</span>
+          </div>
         </div>
 
         <div class="edu-card reveal">
-          <p class="edu-degree">Relevant Certifications</p>
-          <p class="edu-school">Various Platforms</p>
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <p class="edu-degree">Certifications &amp; Continuing Education</p>
+          <p class="edu-school">Coursera · AWS · Google Cloud</p>
           <p class="edu-year">Ongoing</p>
-          <p class="edu-desc">
-            Deep Learning Specialisation (Coursera · deeplearning.ai),
-            AWS Certified Machine Learning — Specialty,
-            Google Professional Data Engineer.
-          </p>
+          <p class="edu-desc">Deep Learning Specialisation (deeplearning.ai), AWS Certified ML – Specialty, Google Professional Data Engineer.</p>
+          <div class="edu-tags">
+            <span class="edu-tag">AWS</span>
+            <span class="edu-tag">GCP</span>
+            <span class="edu-tag">Deep Learning</span>
+            <span class="edu-tag">MLOps</span>
+          </div>
         </div>
 
       </div>
@@ -307,8 +404,8 @@
       <p class="section-label reveal">Get in touch</p>
       <h2 class="section-heading reveal">Let's build something.</h2>
       <p class="section-sub reveal" style="margin-bottom:2rem;">
-        Open to full-time roles, research collaborations, and interesting
-        projects where innovation, operations, and technology intersect.
+        Open to full-time roles, research collaborations, and projects
+        where innovation, operations, and technology intersect.
       </p>
       <div class="cta-row reveal">
         <a href="mailto:mehrab@example.com" class="btn btn-primary">→ Email Me</a>
@@ -318,42 +415,73 @@
     </section>
 
     <footer>
-      <div class="footer-top">
+      <div class="footer-row">
         <p class="footer-tagline">
           Open to job opportunities and projects where
-          <span>innovation, operations, and technology</span> intersect.
+          <strong>innovation, operations, and technology</strong> intersect.
         </p>
-        <nav class="footer-links">
-          <a href="#projects">Projects</a>
-          <a href="#philosophy">Process</a>
-          <a href="#education">Education</a>
-          <a href="https://linkedin.com/in/mehrabfajar" target="_blank">LinkedIn</a>
-          <a href="https://github.com/mehrabfajar" target="_blank">GitHub</a>
-          <a href="mailto:mehrab@example.com">Email</a>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">© 2025 Mehrab Fajar · Built with raw HTML/CSS</p>
-        <p class="footer-copy"><a href="#hero" style="color:inherit;text-decoration:none;">Back to top ↑</a></p>
+        <p class="footer-copy">
+          © 2026 Mehrab Fajar &nbsp;·&nbsp;
+          <a href="#hero">Back to top ↑</a>
+        </p>
       </div>
     </footer>
 
   </main>
 
   <script>
+    // ── TYPING EFFECT ──
+    const lines = [
+      'AI & Data Science Engineer',
+      'Intelligent Systems Builder',
+      'ML Pipeline Architect',
+      'LLM Researcher',
+      'Problem Solver'
+    ];
+    let li = 0, ci = 0, deleting = false;
+    const el = document.getElementById('typed-text');
+    function type() {
+      const current = lines[li];
+      if (!deleting) {
+        el.textContent = current.slice(0, ++ci);
+        if (ci === current.length) { deleting = true; setTimeout(type, 1800); return; }
+      } else {
+        el.textContent = current.slice(0, --ci);
+        if (ci === 0) { deleting = false; li = (li + 1) % lines.length; }
+      }
+      setTimeout(type, deleting ? 45 : 80);
+    }
+    setTimeout(type, 1200);
+
+    // ── SCROLL REVEAL ──
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
+      entries.forEach(e => {
         if (e.isIntersecting) {
           const siblings = [...e.target.parentElement.querySelectorAll('.reveal:not(.visible)')];
-          siblings.forEach((el, idx) => {
-            setTimeout(() => el.classList.add('visible'), idx * 90);
-          });
+          siblings.forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 90));
           io.unobserve(e.target);
         }
       });
     }, { threshold: 0.08 });
     reveals.forEach(el => io.observe(el));
+
+    // ── PROCESS LINE HEIGHT ──
+    function setLineHeight() {
+      const tl = document.getElementById('process-timeline');
+      const line = document.getElementById('process-line');
+      const steps = tl.querySelectorAll('.process-step');
+      if (!steps.length) return;
+      const first = steps[0].querySelector('.process-node');
+      const last  = steps[steps.length - 1].querySelector('.process-node');
+      const tlTop = tl.getBoundingClientRect().top;
+      const top   = first.getBoundingClientRect().top - tlTop + 11;
+      const bot   = last.getBoundingClientRect().top  - tlTop + 11;
+      line.style.top    = top + 'px';
+      line.style.height = (bot - top) + 'px';
+    }
+    window.addEventListener('load', setLineHeight);
+    window.addEventListener('resize', setLineHeight);
   </script>
 
 </body>
