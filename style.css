@@ -169,14 +169,62 @@ section { padding:7rem 0; }
 /* ══════════════════════════════════════════
    TECH STACK SECTION
 ══════════════════════════════════════════ */
-#techstack { padding:7rem 0; }
+/* #techstack { padding:7rem 0; }
 
 .stack-grid {
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
   gap:1rem;
   margin-top:3rem;
+} */
+
+#techstack {
+  background: var(--bg-1);
+  margin: 0 -100vw;
+  padding: 7rem 100vw;
 }
+
+#techstack > div {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;   /* ← adds side breathing room */
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+#philosophy {
+  background: var(--bg-1);
+  margin: 0 -100vw;
+  padding: 7rem 100vw;
+}
+
+.philosophy-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;   /* ← same fix */
+}
+
+@media (max-width: 1100px) {
+  .stack-grid { grid-template-columns: repeat(3, 1fr); }
+  .process-radial-layout { grid-template-columns: 1fr; }
+  .process-wheel-wrap { max-width: 340px; margin: 0 auto; }
+}
+
+@media (max-width: 768px) {
+  #techstack > div { padding: 0 1.25rem; }
+  .philosophy-inner { padding: 0 1.25rem; }
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .stack-grid { grid-template-columns: 1fr; }
+}
+
 
 .stack-category {
   background:var(--bg-1);
