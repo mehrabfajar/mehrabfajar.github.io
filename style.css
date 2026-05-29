@@ -172,10 +172,18 @@ section { padding:7rem 0; }
 #techstack { padding:7rem 0; }
 
 .stack-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:1rem;
-  margin-top:3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1100px) {
+  .stack-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .stack-category {
