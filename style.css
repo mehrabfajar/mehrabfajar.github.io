@@ -131,7 +131,7 @@ section { padding:7rem 0; }
 
 /* ── HERO AVATAR ── */
 .hero-photo-wrap { opacity:0;animation:fadeUp 0.7s 0.5s forwards;display:flex;flex-direction:column;align-items:center;gap:1.5rem; }
-.hero-avatar { width:260px;height:260px;border-radius:50%;background:linear-gradient(135deg,rgba(199,21,133,0.18) 0%,rgba(120,0,80,0.3) 100%);border:2px solid rgba(199,21,133,0.35);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 60px rgba(199,21,133,0.15),inset 0 0 40px rgba(199,21,133,0.06);overflow:hidden; }
+.hero-avatar { width:260px;height:260px;border-radius:50%;background:linear-gradient(135deg,rgba(199,21,133,0.18) 0%,rgba(120,0,80,0.3) 100%);border:2px solid rgba(199,21,133,0.35);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 60px rgba(199,21,133,0.15),inset 0 0 40px rgba(199,21,133,0.06); }
 .hero-avatar::before { content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(199,21,133,0.15);animation:spin 12s linear infinite;border-top-color:rgba(199,21,133,0.5); }
 .hero-avatar::after { content:'';position:absolute;inset:-18px;border-radius:50%;border:1px solid rgba(199,21,133,0.08);animation:spin 20s linear infinite reverse;border-right-color:rgba(199,21,133,0.3); }
 @keyframes spin { to{transform:rotate(360deg)} }
