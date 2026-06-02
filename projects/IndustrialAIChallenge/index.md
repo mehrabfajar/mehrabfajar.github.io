@@ -60,7 +60,7 @@ This was important because industrial processes are rarely clean textbook datase
 Before modeling, we studied the production flow around the slitting operation. At a high level, the process can be described as:
 
 
-<div class="mermaid">
+```mermaid
 flowchart LR
     A[Customer Demand & Forecasts] --> B[Production Planning]
     B --> C[Coating / Semi-Finished Rolls]
@@ -69,7 +69,7 @@ flowchart LR
     E --> F[Packaging & Shipping]
     D --> G[Capacity Signals]
     G --> B
-</div>
+```
 
 The slitting area became the analytical focus because it is where product variety, setup requirements, machine constraints, and delivery pressure meet. From an industrial engineering perspective, this made it a capacity-planning problem as much as a machine-learning problem.
 
@@ -77,7 +77,7 @@ The slitting area became the analytical focus because it is where product variet
 
 We followed a CRISP-DM-inspired workflow, adapted to the rhythm of an industrial challenge:
 
-<div class="mermaid">
+```mermaid
 flowchart TD
     A[Business Understanding] --> B[Data Understanding]
     B --> C[Data Preparation]
@@ -86,7 +86,7 @@ flowchart TD
     E --> F[Evaluation]
     F --> G[Operationalization Thinking]
     G --> B
-</div>
+```
 
 ### 1. Business Understanding
 
@@ -136,7 +136,7 @@ The project produced a predictive workflow for estimating daily slitting output 
 
 At a high level, the system can be summarized as:
 
-<div class="mermaid">
+```mermaid
 flowchart LR
     A[Production & Planning Data] --> B[Cleaning and Alignment]
     B --> C[Daily Feature Table]
@@ -144,7 +144,7 @@ flowchart LR
     D --> E[Evaluation]
     E --> F[Planner-Facing Output]
     F --> G[Capacity Decisions]
-</div>
+```
 
 The intended use was not to replace planners. It was to give them an earlier signal: a structured forecast that could support workload balancing, delivery-date reliability, and proactive discussion around bottlenecks.
 
@@ -219,8 +219,3 @@ The Fedrigoni Industrial AI Challenge showed how data science can support real m
 
 For me, the most valuable aspect of the challenge was the opportunity to work at the intersection of **industrial engineering, process analysis, and artificial intelligence.** It reinforced the idea that successful innovation is not only about building accurate models but also about understanding **how technology can support people, processes, and organizational objectives.**
 
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({ startOnLoad: true });
-</script>
