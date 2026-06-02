@@ -1,67 +1,219 @@
-# Fedrigoni Industrial AI Challenge - Team 3
+# Industrial AI Challenge - Fedrigoni 
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-3C5D99?style=flat&logo=xgboost&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat&logo=matplotlib&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-9E9E9E?style=flat&logo=seaborn&logoColor=white)
+![Scikit--learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat&logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-3C5D99?style=flat)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=flat)
 
-## Project Overview
+![Fedrigoni Industrial AI Challenge preview](/projects/IndustrialAIChallenge/Fedrigoni.avif)
 
-This project is part of the **Fedrigoni Industrial AI Challenge** where we focused on improving the slitting process in paper manufacturing at **Fedrigoni’s Arco plant**. By leveraging **predictive AI models** and **data analytics**, we aimed to predict daily slitting output and optimize production management to improve operational efficiency and customer satisfaction.
+## Context
 
-The goal of this project was to help Fedrigoni move from **reactive to predictive production management**, allowing them to anticipate low-output scenarios and make proactive adjustments to production workloads.
+This project was developed as part of the **Industrial AI Challenge**, an initiative promoted by **Hub Innovazione Trentino / Trentino Innovation** in collaboration with partners including **Università di Trento**, Fondazione Bruno Kessler, Trentino Sviluppo, Confindustria Trento, Digital Innovation Hub, and UniTrento School of Innovation.
 
-## Objectives
+The public goal of the challenge is to connect university teams with real industrial datasets and help companies explore how artificial intelligence, statistical analysis, and machine learning can support production-process optimization. The **2025 edition** involved student teams working on industrial AI problems over an intensive challenge period with company representatives, academic support, and technical mentors.
 
-- Analyze and identify key drivers of variability in the slitting process, such as machine performance, order profiles, and product mix.
-- Develop predictive models to forecast daily slitting capacity based on various inputs.
-- Improve operational efficiency by anticipating low-output scenarios and redistributing workloads to prevent delays and downtime.
+Within this setting, Team 3 worked on a manufacturing challenge proposed by **Fedrigoni** at the Arco plant, focusing on the slitting phase of self-adhesive material production.
+
+## Why This Problem Matters
+
+In roll-based manufacturing, slitting is the conversion step where large semi-finished rolls are cut into smaller rolls according to customer requirements. It is a highly practical operation, but it is also sensitive to variability:
+
+- Product mix changes from day to day.
+- Setup and changeover requirements depend on the order profile.
+- Machine capacity is finite and must be planned carefully.
+- Delivery promises depend on whether production capacity is understood early enough.
+- Material efficiency matters because leftover rolls, excess stock, and rework can create cost and sustainability pressure.
+
+The business question was not simply "Can we build a model?" It was:
+
+> Can data help planners move from reactive production management to earlier, more reliable capacity decisions?
+
+That framing made the project a strong example of **industrial AI as decision support**, not automation for its own sake.
+
+## Confidentiality Note
+
+The public version of this case study intentionally omits proprietary datasets, internal feature names, production volumes, model parameters, detailed plant data, screenshots of internal tools, and company-specific operational values.
+
+The focus here is on the transferable engineering approach: how to structure an industrial AI problem, connect operations knowledge with data science, evaluate models responsibly, and think about adoption in a real manufacturing environment.
+
+## Challenge Framing
+
+The project sat at the intersection of three questions:
+
+1. **Capacity management**  
+   How can daily production capacity be estimated early enough to support planning?
+
+2. **Product-mix complexity**  
+   How can a model account for the fact that different products create different production conditions?
+
+3. **Operational decision support**  
+   How can predictions be presented in a way that helps planners act, while keeping human judgement in the loop?
+
+This was important because industrial processes are rarely clean textbook datasets. The challenge required translating messy production reality into a modeling structure that still respected the plant context.
+
+## Process Understanding
+
+Before modeling, we studied the production flow around the slitting operation. At a high level, the process can be described as:
+
+```mermaid
+flowchart LR
+    A[Customer Demand & Forecasts] --> B[Production Planning]
+    B --> C[Coating / Semi-Finished Rolls]
+    C --> D[Slitting]
+    D --> E[Quality Control]
+    E --> F[Packaging & Shipping]
+    D --> G[Capacity Signals]
+    G --> B
+```
+
+The slitting area became the analytical focus because it is where product variety, setup requirements, machine constraints, and delivery pressure meet. From an industrial engineering perspective, this made it a capacity-planning problem as much as a machine-learning problem.
 
 ## Methodology
 
-We followed the **CRISP-DM methodology**, which helped guide our data preparation, modeling, and evaluation processes:
+We followed a CRISP-DM-inspired workflow, adapted to the rhythm of an industrial challenge:
 
-1. **Business Understanding**: Defined the key operational problems in the slitting process.
-2. **Data Understanding**: Collected and analyzed production data, including machine performance, order intake, and monthly production forecasts.
-3. **Data Preparation**: Cleaned and integrated various data sources to make them suitable for modeling.
-4. **Modeling**: Applied a range of **ensemble forecasting models** to predict daily slitting capacity.
-5. **Evaluation**: Assessed the models using performance metrics to determine the most reliable solution.
-6. **Deployment**: Discussed potential real-world deployment and integration within Fedrigoni's production system.
+```mermaid
+flowchart TD
+    A[Business Understanding] --> B[Data Understanding]
+    B --> C[Data Preparation]
+    C --> D[Feature Engineering]
+    D --> E[Modeling]
+    E --> F[Evaluation]
+    F --> G[Operationalization Thinking]
+    G --> B
+```
 
-## Key Results
+### 1. Business Understanding
 
-- Achieved a **95% accuracy rate** in forecasting daily slitting output based on historical production data.
-- Developed a predictive tool capable of simulating up to **3 days** of production output, allowing the operations team to take proactive measures.
-- Successfully maintained **slitter utilization around 85%**, improving production efficiency and lead times.
-- Enabled the shift from **reactive to proactive production management**, helping to balance workloads and enhance customer satisfaction.
+We translated the company challenge into a forecasting and decision-support problem. The target was to help production stakeholders reason about expected daily output and potential capacity pressure before it became visible operationally.
 
-## Technologies Used
+### 2. Data Understanding
 
-- **Programming Languages**: Python
-- **Data Analysis**: Pandas, NumPy
-- **Modeling & Forecasting**: Ensemble models (e.g., Random Forest, XGBoost)
-- **Data Visualization**: Matplotlib, Seaborn
-- **Machine Learning Libraries**: scikit-learn, TensorFlow
+The team explored multiple sources of production and planning information. Rather than treating the data as isolated tables, we mapped each source to the production logic behind it: demand signals, product categories, production history, machine-related information, and process context.
 
-## Next Steps & Future Work
+### 3. Data Preparation
 
-- **Real-time Data Integration**: The next step involves integrating real-time machine performance data to enhance prediction accuracy.
-- **Deployment**: Future work will focus on deploying the model into a live production environment.
-- **Scalability**: The model could be extended to other production lines within Fedrigoni, improving overall manufacturing operations.
+The core data work involved cleaning, aligning, and aggregating heterogeneous information into a daily modeling view. This step was essential because industrial datasets often come from different systems, at different levels of granularity, and with different meanings.
 
-## Contributions
+### 4. Feature Engineering
 
-This project was completed by **Team 3** for the **Fedrigoni Industrial AI Challenge**. Contributions included data analysis, model development, feature engineering, and evaluation.
+The most important design idea was to represent not only "how much" was produced, but also "what kind" of production day it was. In manufacturing, two days with similar volumes can still be operationally very different if the product mix and setup complexity differ.
 
-Special thanks to **Fedrigoni's Arco plant** for their collaboration and support in providing insights into the production environment.
+At a public level, the feature engineering covered:
 
-## Notes
+- Calendar and time-based signals.
+- Historical production behavior.
+- Demand and planning context.
+- Product-mix descriptors.
+- Aggregated operational indicators.
 
-- **Confidentiality**: Certain technical details, such as specific machine learning models, parameters, and proprietary data, have been omitted for confidentiality purposes.
-- **Data**: All data used in this project is proprietary and provided by **Fedrigoni** for the purpose of this challenge.
+### 5. Modeling
+
+We compared classical machine-learning forecasting approaches with time-series-oriented methods. The goal was not to chase a single algorithm, but to evaluate which modeling family best handled daily variability, short-term trends, and product-mix effects.
+
+The modeling work included:
+
+- Tree-based regression baselines.
+- Gradient boosting approaches.
+- Time-series validation.
+- Iterative feature refinement.
+- Error analysis across different production conditions.
+
+### 6. Evaluation
+
+Evaluation was designed to reflect the real planning use case. Instead of relying only on a random train-test split, the model needed to be tested in a time-aware way, closer to how future production days would actually be forecast.
+
+The public takeaway is that the final solution showed strong validation performance and provided a useful basis for short-horizon production-capacity support. Exact internal metrics and validation windows are omitted here for confidentiality.
+
+## What We Built
+
+The project produced a predictive workflow for estimating daily slitting output from historical and contextual production signals.
+
+At a high level, the system can be summarized as:
+
+```mermaid
+flowchart LR
+    A[Production & Planning Data] --> B[Cleaning and Alignment]
+    B --> C[Daily Feature Table]
+    C --> D[Forecasting Models]
+    D --> E[Evaluation]
+    E --> F[Planner-Facing Output]
+    F --> G[Capacity Decisions]
+```
+
+The intended use was not to replace planners. It was to give them an earlier signal: a structured forecast that could support workload balancing, delivery-date reliability, and proactive discussion around bottlenecks.
+
+## Industrial Engineering Lens
+
+This project was especially valuable because it connected AI with core industrial engineering concepts.
+
+### Capacity Management
+
+The slitting process has limited capacity, and small variations in product mix or setup requirements can affect daily throughput. A forecasting model can help create visibility before the constraint becomes painful.
+
+### Quality and Service Performance
+
+In this context, quality is not only product conformity. It is also the ability to deliver consistently and reliably. Better planning stability can reduce last-minute pressure, rework risk, and service variability.
+
+### Lean and Waste Reduction
+
+Predictive capacity support can contribute to leaner operations by reducing avoidable waiting, overproduction, excess inventory, and material remnants. The model therefore has a sustainability angle as well as an efficiency angle.
+
+### Human-Centered AI
+
+The best industrial AI systems do not remove human expertise from the process. They help experts see earlier, compare options, and act with better information.
+
+## My Contribution
+
+As part of Team 3, I contributed to bridging the gap between the technical solution and the operational challenges faced by Fedrigoni.
+
+- Helped define the project context, business problem, and objectives by translating the company challenge into an industrial AI use case.
+- Analyzed and mapped production processes (BPMN), identifying the slitting operation as the main planning bottleneck.
+- Led operational assessment, including the Value Proposition Canvas (VPC), impact analysis, and industrial adoption recommendations.
+- Evaluated the solution’s impact on capacity planning, service performance, waste reduction, and decision-making within a manufacturing environment.
+- Prepared and consolidated project documentation, including company reports, academic deliverables, and presentation materials throughout the challenge.
+
+## What I Learned
+
+This project strengthened my ability to apply industrial engineering principles to real-world AI initiatives.
+
+- Learned how to frame operational challenges as data-driven decision-support problems rather than purely technical modeling tasks.
+- Gained practical experience in process analysis, BPMN modeling, and identifying operational bottlenecks within manufacturing systems.
+- Improved my understanding of capacity management, forecasting, and the relationship between production variability, service levels, and planning effectiveness.
+- Learned to assess AI solutions from both technical and business perspectives, focusing on business value, adoption, and operational impact.
+- Improved my ability to communicate complex analytical work through reports, presentations, and stakeholder-facing documentation.
+
+## Technical Stack
+
+- **Language:** Python
+- **Data Analysis:** Pandas, NumPy
+- **Visualization:** Matplotlib, Seaborn
+- **Machine Learning:** Scikit-learn, Random Forest, XGBoost
+- **Forecasting:** Time-series validation, lag features, rolling statistics
+- **Experimentation:** Iterative CRISP-DM workflow
+- **Interface Prototype:** Streamlit
+
+## Future Work
+
+If developed further, the concept could evolve toward:
+
+- Integration with live ERP or MES data streams.
+- Continuous model monitoring and drift detection.
+- Planner feedback loops to improve model trust over time.
+- Scenario simulation for product mix, workload, and capacity planning.
+- Deeper integration with scheduling and material-availability constraints.
+
+## Public References
+
+- [Industrial AI Challenge - Trentino Innovation](https://www.trentinoinnovation.eu/innova/strumenti-per-innovazione/ai-challenge/)
+- [Certificate of Attendance](/projects/IndustrialAIChallenge/certificate.jpg)
 
 ## Conclusion
 
-This project demonstrates the potential of **AI and data analytics** to optimize industrial processes. By predicting slitting capacity and automating production management decisions, we can help companies like **Fedrigoni** increase operational efficiency and better serve their customers.
+The Fedrigoni Industrial AI Challenge showed how data science can support real manufacturing decisions when it is grounded in operations knowledge. The strongest part of the work was not only the predictive model, but the translation of an industrial pain point into a structured decision-support system.
+
+For me, the most valuable aspect of the challenge was the opportunity to work at the intersection of **industrial engineering, process analysis, and artificial intelligence.** It reinforced the idea that successful innovation is not only about building accurate models but also about understanding **how technology can support people, processes, and organizational objectives.**
