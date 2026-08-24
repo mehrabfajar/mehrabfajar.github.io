@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Manual RAG versus Context-Aware RAG</title>
+  <desc id="desc">Side-by-side comparison showing that Manual RAG uses the question and technical documentation, while Context-Aware RAG additionally uses selected machine state and relevant historical incidents.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#718096"/></marker><marker id="t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#58B7A5"/></marker>
+  <style>.bg{fill:#0D1117}.panel{fill:#111820;stroke:#27313B;stroke-width:1.5}.node{fill:#161D25;stroke:#44515E;stroke-width:1.4}.ctx{stroke:#58B7A5}.title{fill:#F0F6FC;font:600 28px Inter,Segoe UI,sans-serif}.head{fill:#F0F6FC;font:600 20px Inter,Segoe UI,sans-serif}.label{fill:#F0F6FC;font:600 14px Inter,Segoe UI,sans-serif}.small{fill:#9BA7B4;font:400 12px Inter,Segoe UI,sans-serif}.tag{fill:#7ED0C0;font:600 11px Inter,Segoe UI,sans-serif;letter-spacing:.6px}.line{fill:none;stroke:#718096;stroke-width:2;marker-end:url(#a)}.teal{fill:none;stroke:#58B7A5;stroke-width:2;marker-end:url(#t)}</style></defs>
+  <rect class="bg" width="1200" height="620" rx="18"/><text class="title" x="44" y="52">Same question · Different evidence</text><text class="small" x="44" y="76">Controlled comparison using the same manual retrieval and local language-model provider</text>
+  <rect class="panel" x="40" y="106" width="535" height="440" rx="18"/><rect class="panel" x="625" y="106" width="535" height="440" rx="18"/>
+  <text class="head" x="68" y="145">Manual RAG</text><text class="small" x="68" y="168">Technical documentation only</text>
+  <rect class="node" x="68" y="202" width="180" height="62" rx="11"/><text class="label" x="158" y="239" text-anchor="middle">Operator question</text>
+  <rect class="node" x="367" y="202" width="180" height="62" rx="11"/><text class="label" x="457" y="230" text-anchor="middle">Technical</text><text class="label" x="457" y="249" text-anchor="middle">documentation</text>
+  <rect class="node" x="184" y="310" width="255" height="72" rx="11"/><text class="label" x="311" y="339" text-anchor="middle">Manual retrieval + evidence</text><text class="small" x="311" y="361" text-anchor="middle">MiniLM embeddings · FAISS</text>
+  <path class="line" d="M158 264V286H250V310"/><path class="line" d="M457 264V286H373V310"/>
+  <rect class="node" x="184" y="426" width="255" height="72" rx="11"/><text class="label" x="311" y="455" text-anchor="middle">Grounded response</text><text class="small" x="311" y="477" text-anchor="middle">Documented possibilities remain explicit</text><path class="line" d="M311 382V426"/>
+
+  <text class="head" x="653" y="145">Context-Aware RAG</text><text class="small" x="653" y="168">Documentation + current state + incident history</text>
+  <rect class="node" x="653" y="202" width="145" height="62" rx="11"/><text class="label" x="725" y="239" text-anchor="middle">Question</text>
+  <rect class="node" x="814" y="202" width="145" height="62" rx="11"/><text class="label" x="886" y="230" text-anchor="middle">Technical</text><text class="label" x="886" y="249" text-anchor="middle">documentation</text>
+  <rect class="node ctx" x="975" y="202" width="157" height="62" rx="11"/><text class="label" x="1053" y="230" text-anchor="middle">Current machine</text><text class="label" x="1053" y="249" text-anchor="middle">state</text>
+  <rect class="node ctx" x="975" y="292" width="157" height="62" rx="11"/><text class="label" x="1053" y="320" text-anchor="middle">Relevant historical</text><text class="label" x="1053" y="339" text-anchor="middle">incidents</text>
+  <text class="tag" x="1053" y="190" text-anchor="middle">CONTEXT ONLY</text>
+  <rect class="node ctx" x="740" y="336" width="255" height="72" rx="11"/><text class="label" x="867" y="365" text-anchor="middle">Context assembly</text><text class="small" x="867" y="387" text-anchor="middle">Sources remain separately identified</text>
+  <path class="line" d="M725 264V301H810V336"/><path class="line" d="M886 264V336"/><path class="teal" d="M1053 264V282H944V336"/><path class="teal" d="M1053 354V372H995"/>
+  <rect class="node ctx" x="740" y="444" width="255" height="72" rx="11"/><text class="label" x="867" y="473" text-anchor="middle">Grounded response</text><text class="small" x="867" y="495" text-anchor="middle">Context narrows—but does not prove—cause</text><path class="teal" d="M867 408V444"/>
+  <text class="small" x="600" y="582" text-anchor="middle">Manual RAG never receives machine state or historical incidents · Neither mode controls machinery</text>
+</svg>

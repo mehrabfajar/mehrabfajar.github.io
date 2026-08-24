@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">MachineAware AI system architecture</title>
+  <desc id="desc">A local research architecture showing the shared manual retrieval path, Context-Aware-only machine state and incident inputs, grounded Qwen generation through Ollama, Streamlit delivery, and validated case memory.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#718096"/></marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#58B7A5"/></marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#D6A85F"/></marker>
+    <style>
+      .bg{fill:#0D1117}.panel{fill:#111820;stroke:#27313B;stroke-width:1.5}.node{fill:#161D25;stroke:#34404C;stroke-width:1.5}.shared{stroke:#6EA8C9}.context{stroke:#58B7A5}.memory{stroke:#D6A85F}.title{fill:#F0F6FC;font:600 30px Inter,Segoe UI,sans-serif}.subtitle{fill:#9BA7B4;font:400 15px Inter,Segoe UI,sans-serif}.label{fill:#F0F6FC;font:600 15px Inter,Segoe UI,sans-serif}.small{fill:#9BA7B4;font:400 12px Inter,Segoe UI,sans-serif}.tag{fill:#7ED0C0;font:600 11px Inter,Segoe UI,sans-serif;letter-spacing:.7px}.line{fill:none;stroke:#718096;stroke-width:2;marker-end:url(#arrow)}.teal-line{fill:none;stroke:#58B7A5;stroke-width:2;stroke-dasharray:7 6;marker-end:url(#arrow-teal)}.amber-line{fill:none;stroke:#D6A85F;stroke-width:2;marker-end:url(#arrow-amber)}
+    </style>
+  </defs>
+  <rect class="bg" width="1400" height="820" rx="18"/>
+  <text class="title" x="54" y="58">MachineAware AI</text>
+  <text class="subtitle" x="54" y="84">Local, evidence-grounded research architecture · synthetic MA-200 environment</text>
+
+  <rect class="panel" x="40" y="112" width="1320" height="590" rx="18"/>
+  <text class="tag" x="68" y="143">SHARED DOCUMENTATION PATH</text>
+
+  <rect class="node shared" x="68" y="165" width="190" height="78" rx="12"/>
+  <text class="label" x="163" y="195" text-anchor="middle">Synthetic technical</text><text class="label" x="163" y="216" text-anchor="middle">manual</text>
+  <rect class="node shared" x="292" y="165" width="170" height="78" rx="12"/>
+  <text class="label" x="377" y="195" text-anchor="middle">Section-aware</text><text class="label" x="377" y="216" text-anchor="middle">chunking</text>
+  <rect class="node shared" x="496" y="165" width="180" height="78" rx="12"/>
+  <text class="label" x="586" y="195" text-anchor="middle">Sentence</text><text class="label" x="586" y="216" text-anchor="middle">embeddings</text>
+  <rect class="node shared" x="710" y="165" width="168" height="78" rx="12"/>
+  <text class="label" x="794" y="195" text-anchor="middle">FAISS manual</text><text class="label" x="794" y="216" text-anchor="middle">retrieval</text>
+  <rect class="node shared" x="912" y="165" width="190" height="78" rx="12"/>
+  <text class="label" x="1007" y="195" text-anchor="middle">Retrieved manual</text><text class="label" x="1007" y="216" text-anchor="middle">evidence</text>
+  <path class="line" d="M258 204H292"/><path class="line" d="M462 204H496"/><path class="line" d="M676 204H710"/><path class="line" d="M878 204H912"/>
+
+  <rect class="node shared" x="68" y="310" width="190" height="78" rx="12"/>
+  <text class="label" x="163" y="340" text-anchor="middle">Operator question</text><text class="small" x="163" y="363" text-anchor="middle">Used in both modes</text>
+
+  <text class="tag" x="68" y="458">CONTEXT-AWARE INPUTS ONLY</text>
+  <rect class="node context" x="68" y="480" width="210" height="82" rx="12"/>
+  <text class="label" x="173" y="511" text-anchor="middle">Current machine state</text><text class="small" x="173" y="535" text-anchor="middle">Selected synthetic scenario</text>
+  <rect class="node context" x="330" y="480" width="220" height="82" rx="12"/>
+  <text class="label" x="440" y="511" text-anchor="middle">Historical incident</text><text class="label" x="440" y="532" text-anchor="middle">retrieval</text>
+  <rect class="node context" x="330" y="592" width="220" height="72" rx="12"/>
+  <text class="label" x="440" y="621" text-anchor="middle">Incident history</text><text class="small" x="440" y="643" text-anchor="middle">Validated records weighted higher</text>
+
+  <rect class="node context" x="632" y="328" width="220" height="94" rx="12"/>
+  <text class="label" x="742" y="363" text-anchor="middle">Context assembly</text><text class="small" x="742" y="387" text-anchor="middle">Evidence kept distinct by source</text>
+  <path class="line" d="M258 349H632"/><path class="line" d="M1007 243V275H742V328"/>
+  <path class="teal-line" d="M278 521H302V375H632"/><path class="teal-line" d="M550 521H590V397H632"/><path class="teal-line" d="M440 592V562"/>
+
+  <rect class="node" x="900" y="328" width="190" height="94" rx="12"/>
+  <text class="label" x="995" y="363" text-anchor="middle">Qwen through Ollama</text><text class="small" x="995" y="387" text-anchor="middle">Local inference</text>
+  <rect class="node" x="1138" y="328" width="170" height="94" rx="12"/>
+  <text class="label" x="1223" y="363" text-anchor="middle">Grounded</text><text class="label" x="1223" y="384" text-anchor="middle">response</text>
+  <path class="line" d="M852 375H900"/><path class="line" d="M1090 375H1138"/>
+
+  <rect class="node" x="1138" y="480" width="170" height="82" rx="12"/>
+  <text class="label" x="1223" y="511" text-anchor="middle">Streamlit interface</text><text class="small" x="1223" y="535" text-anchor="middle">Advisory presentation</text>
+  <path class="line" d="M1223 422V480"/>
+
+  <rect class="node memory" x="900" y="592" width="190" height="72" rx="12"/>
+  <text class="label" x="995" y="621" text-anchor="middle">Operator feedback</text><text class="small" x="995" y="643" text-anchor="middle">Resolution requires validation</text>
+  <rect class="node memory" x="632" y="592" width="220" height="72" rx="12"/>
+  <text class="label" x="742" y="621" text-anchor="middle">Validated case memory</text><text class="small" x="742" y="643" text-anchor="middle">Transparent local case records</text>
+  <path class="amber-line" d="M1138 521H995V592"/><path class="amber-line" d="M900 628H852"/><path class="teal-line" d="M632 628H580V521H550"/>
+
+  <rect x="40" y="724" width="1320" height="64" rx="14" fill="#111820" stroke="#27313B"/>
+  <line x1="70" y1="750" x2="112" y2="750" stroke="#718096" stroke-width="2"/><text class="small" x="124" y="754">Shared / Manual RAG path</text>
+  <line x1="346" y1="750" x2="388" y2="750" stroke="#58B7A5" stroke-width="2" stroke-dasharray="7 6"/><text class="small" x="400" y="754">Context-Aware-only evidence</text>
+  <line x1="664" y1="750" x2="706" y2="750" stroke="#D6A85F" stroke-width="2"/><text class="small" x="718" y="754">Human-validated case-memory loop</text>
+  <text class="small" x="1328" y="754" text-anchor="end">Synthetic state only · No PLC or machine-control connection</text>
+</svg>
